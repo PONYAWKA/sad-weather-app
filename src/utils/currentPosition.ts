@@ -3,5 +3,5 @@ export const getPosition = () => {
   navigator.geolocation.getCurrentPosition((data) => {
     date = { lat: data.coords.latitude, lon: data.coords.longitude };
   });
-  return date ?? { lat: 1, lon: 1 };
+  return date ?? { lat: 0, lon: 0 };
 };

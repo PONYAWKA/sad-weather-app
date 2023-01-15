@@ -9,7 +9,7 @@ export const positionReduser = (
   switch (type) {
     case INIT_POSITION: {
       if (!state.lat) return { ...state, lat: payload.lat, lon: payload.lon };
-      else return state;
+      return state;
     }
     default:
       return state;
