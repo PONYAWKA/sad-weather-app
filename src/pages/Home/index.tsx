@@ -12,21 +12,6 @@ import {
 } from "utils/getBackgroundImageUrl";
 
 export const HomePage = () => {
-  const [pos, setPos] = useState({ lat: 0, lon: 0 });
-
-  const dispatch = useDispatch();
-
-  useEffect(
-    () =>
-      navigator.geolocation.getCurrentPosition((data) => {
-        setPos({
-          lat: data.coords.latitude,
-          lon: data.coords.longitude,
-        });
-        dispatch(initPosinion({ lat: pos.lat, lon: pos.lon }));
-      }),
-    [(pos.lat, pos.lon)]
-  );
   return (
     <WeatherBody image={getBackgroundImageUrlv2("rain")}>
       <WeatherInfoBody image={getBackgroundImageUrlv1("rain")}>

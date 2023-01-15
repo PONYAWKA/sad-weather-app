@@ -1,6 +1,9 @@
-import { select } from "redux-saga/effects";
-import { IState } from "store/type";
-export function* getDailyWorker(): Generator<any, any, IState> {
-  const position = yield select(({ positionReduser }) => positionReduser);
-  yield console.log(position);
+import { getDailyWeatherAPI } from "api/dailyWeather";
+import { select, put } from "redux-saga/effects";
+import { addDailyWeather } from "store/actions";
+import { IdailyWeather } from "store/redusers/dailyWeatherReduser";
+export function* getDailyWorker() {
+  const { lat, lon } = yield select(({ positionReduser }) => positionReduser);
+  const data: IdailyWeather = yield getDailyWeatherAPI(lat, lon);
+  yield put(addDailyWeather(data));
 }

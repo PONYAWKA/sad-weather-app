@@ -1,4 +1,4 @@
-export interface IState {
+export interface IPosition {
   lat: number;
   lon: number;
 }

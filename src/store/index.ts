@@ -8,8 +8,13 @@ import { TypedUseSelectorHook, useSelector } from "react-redux";
 import { persistReducer, persistStore } from "redux-persist";
 import { rootSaga } from "./sagas";
 import { composeWithDevTools } from "redux-devtools-extension";
+import { dailyWeatherReduser } from "./redusers/dailyWeatherReduser";
 
-const rootReduser = combineReducers({ hourWeatherReduser, positionReduser });
+const rootReduser = combineReducers({
+  hourWeatherReduser,
+  positionReduser,
+  dailyWeatherReduser,
+});
 const sagaMiddleware = createSagaMiddleware();
 
 const presisrConfig = {

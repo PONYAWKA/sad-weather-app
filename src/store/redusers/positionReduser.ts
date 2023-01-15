@@ -1,9 +1,9 @@
-import { INIT_POSITION, SET_POSITION } from "store/actions";
-import { IState } from "store/type";
+import { INIT_POSITION } from "store/actions";
+import { IPosition } from "store/type";
 import { getPosition } from "utils/currentPosition";
 
 export const positionReduser = (
-  state: IState = getPosition(),
+  state: IPosition = getPosition(),
   { type, payload }: any
 ) => {
   switch (type) {
