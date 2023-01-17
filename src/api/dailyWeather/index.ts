@@ -1,9 +1,9 @@
 import { GET_VISUAL_CROSSING_BASE_URL } from "api/config";
 
-interface elemetType {
+interface elementType {
   temp: number;
   icon: string;
-  datetimeStr: string;
+  dateTimeStr: string;
 }
 export const getDailyWeatherAPI = async (lat: number, lon: number) => {
   const data = await fetch(GET_VISUAL_CROSSING_BASE_URL(lat, lon))
@@ -12,10 +12,10 @@ export const getDailyWeatherAPI = async (lat: number, lon: number) => {
   const dataToSend = {
     curIcon: data.currentConditions.icon,
     curTemp: data.currentConditions.temp,
-    days: data.values.map((e: elemetType) => ({
+    days: data.values.map((e: elementType) => ({
       temp: e.temp,
       icon: e.icon,
-      time: e.datetimeStr.split("T")[0],
+      time: e.dateTimeStr.split("T")[0],
     })),
   };
   return dataToSend;

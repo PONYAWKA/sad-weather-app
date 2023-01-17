@@ -19,7 +19,7 @@
     "ecmaVersion": 11,
     "sourceType": "module"
   },
-  "plugins": ["react", "prettier", "@typescript-eslint"],
+  "plugins": ["react", "prettier", "@typescript-eslint", "simple-import-sort"],
   "root": true,
   "rules": {
     "prettier/prettier": [
@@ -28,8 +28,10 @@
         "endOfLine": "auto"
       }
     ],
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
     "react/prop-types": 0,
     "react/react-in-jsx-scope": "off",
-    "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }] //should add ".ts" if typescript project
+    "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }]
   }
 }

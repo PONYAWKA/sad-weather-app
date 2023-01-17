@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { getDailyWeather } from "store/actions";
-import { DailyWeatherBody } from "./styled";
+
+import { DailyWeatherBody } from "@/components/DailyWeather/styled";
+import { getDailyWeather } from "@/store/actions";
 
 export const DailyWeather = () => {
   const dispatch = useDispatch();

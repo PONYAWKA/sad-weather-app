@@ -1,12 +1,13 @@
+import { Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
-import { HomePage } from "./pages/Home";
-import { persistor, store } from "store/index";
-import { Suspense } from "react";
-import { ThemeProvider } from "styled-components";
-import { theme } from "utils/theme";
 import { PersistGate } from "redux-persist/integration/react";
-import { GloabalStyle } from "utils/globalStyle";
+import { persistor, store } from "store/index";
+import { ThemeProvider } from "styled-components";
+
+import { HomePage } from "@/pages/Home";
+import { GloabalStyle } from "@/utils/globalStyle";
+import { theme } from "@/utils/theme";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

@@ -1,8 +1,8 @@
-import { INIT_POSITION } from "store/actions";
-import { IPosition } from "store/type";
-import { getPosition } from "utils/currentPosition";
+import { INIT_POSITION } from "@/store/actions";
+import { IPosition } from "@/store/type";
+import { getPosition } from "@/utils/currentPosition";
 
-export const positionReduser = (
+export const positionReducer = (
   state: IPosition = getPosition(),
   { type, payload }: any
 ) => {

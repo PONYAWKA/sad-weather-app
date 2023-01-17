@@ -1,4 +1,4 @@
-import { ADD_DAILY_WEATHER } from "store/actions";
+import { ADD_DAILY_WEATHER } from "@/store/actions";
 
 interface day {
   temp: number;
@@ -21,7 +21,7 @@ const initState = {
   curIcon: "",
   days: [],
 };
-export const dailyWeatherReduser = (
+export const dailyWeatherReducer = (
   state: IdailyWeather = initState,
   { type, payload }: action
 ) => {
