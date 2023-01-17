@@ -19,17 +19,17 @@ const rootReducer = combineReducers({
 });
 const sagaMiddleware = createSagaMiddleware();
 
-const presisrConfig = {
+const persisConfig = {
   key: "root",
   storage,
 };
-const persistReducer = persistReducer(presisrConfig, rootReducer);
+const myPersistReducer = persistReducer(persisConfig, rootReducer);
 
 export const store = createStore(
-  persistReducer,
+  myPersistReducer,
   composeWithDevTools(applyMiddleware(sagaMiddleware))
 );
 sagaMiddleware.run(rootSaga);
-export const persistor = persistStore(store);
+export const persister = persistStore(store);
 export type typeState = ReturnType<typeof store.getState>;
 export const useAppSelector: TypedUseSelectorHook<typeState> = useSelector;

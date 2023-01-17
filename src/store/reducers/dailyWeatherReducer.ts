@@ -3,6 +3,7 @@ import { ADD_DAILY_WEATHER } from "@/store/actions";
 interface day {
   temp: number;
   icon: string;
+  date: string;
 }
 
 export interface IdailyWeather {

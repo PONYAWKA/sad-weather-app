@@ -1,17 +1,14 @@
-import {
-  getBackgroundImageUrLv1,
-  getBackgroundImageUrLv2,
-} from "utils/getBackgroundImageUrl";
+import { getBackgroundImageUrLv2 } from "utils/getBackgroundImageUrl";
 
 import { WeatherContent } from "@/components/WeatherContent";
-import { WeatherInfoBody } from "@/components/WeatherContent/styled";
 import { WeatherInfoLine } from "@/components/WeatherInfoLine";
-import { WeatherBody } from "@/pages/Home/styled";
+import { WeatherBody, WeatherInfoBody } from "@/pages/Home/styled";
 
 export const HomePage = () => {
+  const image = getBackgroundImageUrLv2("rain");
   return (
-    <WeatherBody image={getBackgroundImageUrLv2("rain")}>
-      <WeatherInfoBody image={getBackgroundImageUrLv1("rain")}>
+    <WeatherBody image={image}>
+      <WeatherInfoBody image={image}>
         <WeatherContent />
         <WeatherInfoLine />
       </WeatherInfoBody>
