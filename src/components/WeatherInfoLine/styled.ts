@@ -1,7 +1,11 @@
 import styled from "styled-components";
 
 export const InfoLineBody = styled.div`
-  height: 45%;
-  min-height: ${({ theme }) => theme.spaces.xx}px;
-  background-color: rgba(14, 13, 33, 0.8);
+  ${({ theme }) => theme.colors.background};
+  padding-bottom: ${({ theme }) => theme.spaces.s}px;
+`;
+
+export const WeatherChoiceButton = styled.button`
+  margin-left: 50%;
+  transform: translateX(-50%);
 `;

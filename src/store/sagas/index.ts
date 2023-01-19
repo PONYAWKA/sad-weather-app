@@ -1,7 +1,7 @@
 import { all, fork } from "redux-saga/effects";
 
-import { getDailyWatcher } from "./watcherSaga/getDailyWatcher";
+import { getWeatherWatcher } from "./watcherSaga/getWeatherWatcher";
 
 export function* rootSaga() {
-  yield all([fork(getDailyWatcher)]);
+  yield all([fork(getWeatherWatcher)]);
 }

@@ -16,7 +16,6 @@ export const EventList = ({ isAuthorized }: IProps) => {
   const handleGetEvents = async () => {
     setEvents((await getEventsApi())["0"]);
   };
-  console.log(events);
 
   if (isAuthorized)
     return (

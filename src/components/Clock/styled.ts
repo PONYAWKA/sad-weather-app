@@ -8,6 +8,7 @@ export const ClockBody = styled.div`
 export const ClockContainer = styled.div`
   margin: ${({ theme }) => theme.spaces.mm}px 0 0
     ${({ theme }) => theme.spaces.x}px;
+  color: ${({ theme }) => theme.colors.white};
 `;
 
 export const Timer = styled.div`
