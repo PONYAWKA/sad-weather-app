@@ -9,6 +9,8 @@ const spaces = {
   ss: 5,
   s: 10,
   m: 20,
+  mm: 40,
+  x: 100,
   xx: 200,
 };
 const fonts = {

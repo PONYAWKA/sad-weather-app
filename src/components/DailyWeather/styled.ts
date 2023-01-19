@@ -33,6 +33,7 @@ export const WeatherInfoElement = styled.div`
   color: ${({ theme }) => theme.color.white};
   margin: 0 ${({ theme }) => theme.spaces.m}px;
   margin-top: ${({ theme }) => theme.spaces.s}px;
+  box-sizing: border-box;
   &:first-child {
     flex-direction: row;
     position: sticky;
@@ -40,6 +41,7 @@ export const WeatherInfoElement = styled.div`
     align-items: center;
     padding: ${({ theme }) => theme.spaces.s}px;
     border-radius: ${({ theme }) => theme.spaces.m}px;
+    margin-right: ${({ theme }) => theme.spaces.mm}px;
   }
 `;
 

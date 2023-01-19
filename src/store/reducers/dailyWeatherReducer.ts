@@ -1,4 +1,5 @@
 import { ADD_DAILY_WEATHER } from "@/store/actions";
+import { getBackgroundImageUrLv2 } from "@/utils/getBackgroundImageUrl";
 
 interface day {
   temp: number;
@@ -28,7 +29,7 @@ export const dailyWeatherReducer = (
 ) => {
   switch (type) {
     case ADD_DAILY_WEATHER:
-      return { ...payload };
+      return { ...payload, curIcon: getBackgroundImageUrLv2(payload.curIcon) };
     default:
       return state;
   }

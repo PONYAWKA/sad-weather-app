@@ -9,17 +9,10 @@ import {
   WeatherInfoElementWeekDay,
 } from "@/components/DailyWeather/styled";
 import { useAppSelector } from "@/store";
-import { getDailyWeather } from "@/store/actions";
 import { getCurrentWeekDay } from "@/utils/getCurrenWeekDay";
 import { getIcon } from "@/utils/getIcon";
 
 export const DailyWeather = () => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getDailyWeather());
-  }, []);
-
   const dailyWeather = useAppSelector(
     ({ dailyWeatherReducer }) => dailyWeatherReducer
   );
