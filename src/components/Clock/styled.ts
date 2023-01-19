@@ -11,5 +11,5 @@ export const ClockContainer = styled.div`
 `;
 
 export const Timer = styled.div`
-  font-size: 68px;
+  font-size: ${({ theme }) => theme.fonts.xx}px;
 `;

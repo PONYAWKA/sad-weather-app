@@ -23,14 +23,14 @@ export const DailyWeatherBody = styled.div`
   &::-webkit-scrollbar-thumb {
     border-radius: 10px;
     box-shadow: inset 0 0 ${({ theme }) => theme.spaces.s}px
-      ${({ theme }) => theme.color.white};
+      ${({ theme }) => theme.colors.white};
   }
 `;
 
 export const WeatherInfoElement = styled.div`
   display: flex;
   flex-direction: column;
-  color: ${({ theme }) => theme.color.white};
+  color: ${({ theme }) => theme.colors.white};
   margin: 0 ${({ theme }) => theme.spaces.m}px;
   margin-top: ${({ theme }) => theme.spaces.s}px;
   box-sizing: border-box;

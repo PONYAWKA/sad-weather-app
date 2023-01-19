@@ -8,6 +8,7 @@ import {
   LogButton,
 } from "@/components/CalendarBody/styled";
 import { Clock } from "@/components/Clock";
+import { EventList } from "@/components/EventList";
 
 export const CalendarBody = () => {
   const [isAuthorized, setisAuthorized] = useState(false);
@@ -34,6 +35,7 @@ export const CalendarBody = () => {
         <Clock />
         <CalendarContainer>
           <LogButton onClick={handleAuthorize}>{authText}</LogButton>
+          <EventList isAuthorized={isAuthorized} />
         </CalendarContainer>
       </CalendarDisplay>
     </CalendarBodyContainer>
