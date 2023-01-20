@@ -7,7 +7,7 @@ export const DailyWeatherBody = styled.div`
   height: 100%;
   overflow-x: scroll;
   box-sizing: border-box;
-  @media (min-width: 1230px) {
+  @media (min-width: 1310px) {
     justify-content: center;
     overflow-x: hidden;
   }

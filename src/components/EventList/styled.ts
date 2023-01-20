@@ -44,6 +44,9 @@ export const EventListContainer = styled.div`
     box-shadow: inset 0 0 ${({ theme }) => theme.spaces.s}px
       ${({ theme }) => theme.colors.white};
   }
+  @media (min-height: 975px) {
+    max-height: 300px;
+  }
 `;
 export const EventElementTime = styled.div`
   border-radius: ${({ theme }) => theme.spaces.m}px;

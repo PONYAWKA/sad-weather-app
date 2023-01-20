@@ -6,10 +6,17 @@ export const CalendarBodyContainer = styled.div`
   justify-content: space-between;
   flex-direction: row;
   overflow: hidden;
+  @media (max-width: 767px) {
+    flex-direction: column-reverse;
+    justify-content: start;
+  }
 `;
 export const CalendarDisplay = styled.div`
   flex-direction: column;
-  width: 30%;
+  width: 40%;
+  @media (max-width: 767px) {
+    width: 100% !important;
+  }
 `;
 export const CityDisplay = styled.div``;
 
@@ -20,4 +27,8 @@ export const CalendarContainer = styled.div`
   flex-direction: column;
 `;
 
-export const LogButton = styled.button``;
+export const LogButton = styled.button`
+  @media (max-width: 767px) {
+    margin-top: ${({ theme }) => theme.spaces.m}px;
+  }
+`;

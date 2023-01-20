@@ -10,10 +10,14 @@ export const getEventsApi = async () => {
     singleEvents: true,
     orderBy: "startTime",
   });
+  console.log(data);
+
   const usefulData = [
     data.result.items?.map((e: ImapElement) => ({
       eventText: e.summary,
-      startTime: e.start.dateTime.split("T")[1].split("+")[0].slice(0, -3),
+      startTime:
+        e?.start?.dateTime?.split("T")[1].split("+")[0].slice(0, -3) ??
+        "Whole Day",
     })),
   ];
   return [...usefulData];

@@ -17,10 +17,12 @@ const spaces = {
   mm: 40,
   x: 100,
   xx: 200,
+  xxl: 400,
 };
 const fonts = {
   m: 24,
   x: 36,
   xx: 68,
+  xxl: 72,
 };
 export const theme = { padding, colors, spaces, fonts };
