@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { DailyWeather } from "@/components/DailyWeather";
+import { DailyWeather } from "@/components/DailyWeather/index";
 import {
   InfoLineBody,
   WeatherChoiceButton,
@@ -21,7 +21,7 @@ export const WeatherInfoLine = () => {
   return (
     <InfoLineBody>
       <WeatherChoiceButton onClick={changeModeHandler}>
-        {weatherMode ? "Hourly Weather" : "Daily Weather"}
+        {weatherMode ? "Hourly Weather" : "Daily Weather "}
       </WeatherChoiceButton>
       <DailyWeather
         items={weatherMode ? dailyWeather : hourlyWeather}

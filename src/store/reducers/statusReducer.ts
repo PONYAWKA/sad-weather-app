@@ -1,4 +1,9 @@
-import { SET_BACKGROUND, SET_CITY, SET_LOADING } from "@/store/actions";
+import {
+  SET_BACKGROUND,
+  SET_CITY,
+  SET_CITY_NAME,
+  SET_LOADING,
+} from "@/store/actions";
 import { getBackgroundImageUrLv1 } from "@/utils/getBackgroundImageUrl";
 
 const initialState = {
@@ -9,7 +14,7 @@ const initialState = {
 };
 interface actionType {
   type: string;
-  payload: string | boolean;
+  payload: string | boolean | { city: string; name: string };
 }
 export const statusReducer = (
   state = initialState,
@@ -28,6 +33,14 @@ export const statusReducer = (
       return state;
     case SET_CITY:
       if (typeof payload === "string") return { ...state, city: payload };
+      return state;
+    case SET_CITY_NAME:
+      if (typeof payload === "object")
+        return {
+          ...state,
+          city: payload.city,
+          name: payload.name ?? state.name,
+        };
       return state;
   }
 };

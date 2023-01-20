@@ -13,6 +13,7 @@ export const ADD_HOURLY_WEATHER = "ADD_HOURLY_WEATHER";
 export const SET_BACKGROUND = "SET_BACKGROUND";
 export const SET_LOADING = "SET_LOADING";
 export const SET_CITY = "SET_CITY";
+export const SET_CITY_NAME = "SET_CITY_NAME";
 
 export const initPosition = (payload: IPosition) => ({
   type: INIT_POSITION,
@@ -42,6 +43,10 @@ export const setIsLoading = (payload: boolean) => ({
 
 export const setCity = (payload: string) => ({
   type: SET_CITY,
+  payload: payload,
+});
+export const setCityName = (payload: { city: string; name?: string }) => ({
+  type: SET_CITY_NAME,
   payload: payload,
 });
 

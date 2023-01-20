@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const CalendarBodyContainer = styled.div`
   display: flex;
   height: 100%;
+  justify-content: space-between;
   flex-direction: row;
   overflow: hidden;
 `;
