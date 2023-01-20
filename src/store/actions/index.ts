@@ -1,5 +1,5 @@
+import { IPosition } from "@/store/actions/Interfaces";
 import { IDailyWeather, IHourlyWeather } from "@/store/reducers/interfaces";
-import { IPosition } from "@/store/type";
 
 export const SET_POSITION = "SET_POSITION";
 export const INIT_POSITION = "INIT_POSITION";
@@ -16,6 +16,10 @@ export const SET_CITY = "SET_CITY";
 
 export const initPosition = (payload: IPosition) => ({
   type: INIT_POSITION,
+  payload: payload,
+});
+export const setPosition = (payload: IPosition) => ({
+  type: SET_POSITION,
   payload: payload,
 });
 

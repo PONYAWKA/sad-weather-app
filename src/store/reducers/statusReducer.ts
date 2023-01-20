@@ -4,7 +4,8 @@ import { getBackgroundImageUrLv1 } from "@/utils/getBackgroundImageUrl";
 const initialState = {
   url: " ",
   isLoading: true,
-  city: " ",
+  city: "",
+  name: "",
 };
 interface actionType {
   type: string;

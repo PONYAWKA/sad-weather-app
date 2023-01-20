@@ -10,6 +10,8 @@ import {
 import { Clock } from "@/components/Clock";
 import { EventList } from "@/components/EventList";
 
+import { CityChanger } from "../CityChanger";
+
 export const Calendar = () => {
   const [isAuthorized, setIsAuthorized] = useState(false);
 
@@ -38,6 +40,7 @@ export const Calendar = () => {
           <EventList isAuthorized={isAuthorized} />
         </CalendarContainer>
       </CalendarDisplay>
+      <CityChanger />
     </CalendarBodyContainer>
   );
 };
