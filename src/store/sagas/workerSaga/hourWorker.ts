@@ -1,10 +1,10 @@
 import { put, select } from "redux-saga/effects";
 
 import { getHourlyWeather } from "@/api/hourlyWeather/index";
-import { addHourlyWeather, setCity, setCityName } from "@/store/actions";
+import { addHourlyWeather, setCityName } from "@/store/actions";
 import { IHourlyWeather } from "@/store/reducers/interfaces";
 
-export function* getHourWorker() {
+export function* hourWorker() {
   const { lat, lon } = yield select(({ positionReducer }) => positionReducer);
   const { city, days }: IHourlyWeather & { city: string } =
     yield getHourlyWeather(lat, lon);

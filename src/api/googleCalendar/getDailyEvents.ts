@@ -1,7 +1,7 @@
 import { apiCalendar } from "@/api/googleCalendar/index";
-import { ImapElement } from "@/api/googleCalendar/interfaces";
+import { IEventData, ImapElement } from "@/api/googleCalendar/interfaces";
 
-export const getEventsApi = async () => {
+export const getEventsApi = async (): Promise<IEventData> => {
   const today = new Date(new Date().setUTCHours(0, 0, 0, 0));
   const tomorrow = new Date(new Date(today).setDate(today.getDate() + 1));
   const data = await apiCalendar.listEvents({
@@ -20,5 +20,5 @@ export const getEventsApi = async () => {
         "Whole Day",
     })),
   ];
-  return [...usefulData];
+  return [...usefulData][0];
 };

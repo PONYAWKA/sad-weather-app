@@ -1,6 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 
-import { ClockBody, ClockContainer, Timer } from "@/components/Clock/styled";
+import {
+  ClockBody,
+  ClockContainer,
+  Timer as ClockTimer,
+} from "@/components/Clock/styled";
 import { getCurrentDate } from "@/utils/getCurrentData";
 import { getCurrentTime } from "@/utils/getCurrentTime";
 
@@ -17,7 +21,7 @@ export const Clock = () => {
   return (
     <ClockBody>
       <ClockContainer>
-        <Timer>{time}</Timer>
+        <ClockTimer>{time}</ClockTimer>
         {getCurrentDate()}
       </ClockContainer>
     </ClockBody>

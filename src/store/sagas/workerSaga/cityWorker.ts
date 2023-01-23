@@ -3,7 +3,7 @@ import { put, select } from "redux-saga/effects";
 import { getCityCoord } from "@/api/cityCoordAPI";
 import { getWeather, setCityName, setPosition } from "@/store/actions";
 
-export function* setCityWorker() {
+export function* cityWorker() {
   const NewCity: string = yield select(
     ({ statusReducer }) => statusReducer.city
   );

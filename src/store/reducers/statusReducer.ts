@@ -4,6 +4,7 @@ import {
   SET_CITY_NAME,
   SET_LOADING,
 } from "@/store/actions";
+import { actionType, IStatusReducer } from "@/store/reducers/interfaces";
 import { getBackgroundImageUrLv1 } from "@/utils/getBackgroundImageUrl";
 
 const initialState = {
@@ -12,12 +13,9 @@ const initialState = {
   city: "",
   name: "",
 };
-interface actionType {
-  type: string;
-  payload: string | boolean | { city: string; name: string };
-}
+
 export const statusReducer = (
-  state = initialState,
+  state: IStatusReducer = initialState,
   { type, payload }: actionType
 ) => {
   switch (type) {

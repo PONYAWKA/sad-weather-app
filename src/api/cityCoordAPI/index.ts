@@ -1,4 +1,4 @@
-import { GET_CITY_COORD_URL } from "../config";
+import { GET_CITY_COORD_URL } from "@/api/config";
 
 export const getCityCoord = async (city: string) => {
   const data = await fetch(GET_CITY_COORD_URL(city)).then((data) =>

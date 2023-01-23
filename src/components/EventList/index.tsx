@@ -1,6 +1,5 @@
-import { useState } from "react";
+import { useDispatch } from "react-redux";
 
-import { getEventsApi } from "@/api/googleCalendar/getDailyEvents";
 import { ImapElement, IProps } from "@/components/EventList/interfaces";
 import {
   EventElementBody,
@@ -10,11 +9,18 @@ import {
   EventListContainer,
   LoadEventsButton,
 } from "@/components/EventList/styled";
+import { useAppSelector } from "@/store";
+import { getEvents } from "@/store/actions";
+import { IEventsReducer } from "@/store/reducers/interfaces";
+import { eventSelector } from "@/store/selectors";
 
 export const EventList = ({ isAuthorized }: IProps) => {
-  const [events, setEvents] = useState<any>([]);
+  const dispatch = useDispatch();
+
+  const { events }: IEventsReducer = useAppSelector(eventSelector);
+
   const handleGetEvents = async () => {
-    setEvents((await getEventsApi())["0"]);
+    dispatch(getEvents());
   };
 
   if (isAuthorized)

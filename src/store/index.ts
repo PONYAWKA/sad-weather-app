@@ -7,6 +7,7 @@ import storage from "redux-persist/lib/storage";
 import createSagaMiddleware from "redux-saga";
 
 import { dailyWeatherReducer } from "@/store/reducers/dailyWeatherReducer";
+import { eventsReducer } from "@/store/reducers/eventsReducer";
 import { hourWeatherReducer } from "@/store/reducers/hourWeatherReducer";
 import { positionReducer } from "@/store/reducers/positionReducer";
 import { statusReducer } from "@/store/reducers/statusReducer";
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   positionReducer,
   dailyWeatherReducer,
   statusReducer,
+  eventsReducer,
 });
 const sagaMiddleware = createSagaMiddleware();
 

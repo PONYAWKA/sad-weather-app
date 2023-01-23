@@ -1,10 +1,11 @@
 import { INIT_POSITION, SET_POSITION } from "@/store/actions";
 import { IPosition } from "@/store/actions/Interfaces";
+import { IPayload } from "@/store/reducers/interfaces";
 import { getPosition } from "@/utils/currentPosition";
 
 export const positionReducer = (
   state: IPosition = getPosition(),
-  { type, payload }: any
+  { type, payload }: IPayload
 ) => {
   switch (type) {
     case INIT_POSITION: {

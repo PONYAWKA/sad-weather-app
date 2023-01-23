@@ -1,21 +1,15 @@
+import { IItems } from "@/components/Weather/interfaces";
 import {
   DailyWeatherBody,
   WeatherInfoElement,
   WeatherInfoElementIcon,
   WeatherInfoElementTemp,
   WeatherInfoElementWeekDay,
-} from "@/components/DailyWeather/styled";
+} from "@/components/Weather/styled";
 import { getCurrentWeekDay } from "@/utils/getCurrenWeekDay";
 import { getIcon } from "@/utils/getIcon";
 
-interface IItems {
-  days: {
-    temp: number;
-    icon: string;
-    date: string;
-  }[];
-}
-export const DailyWeather = ({
+export const Weather = ({
   items,
   mode,
 }: {

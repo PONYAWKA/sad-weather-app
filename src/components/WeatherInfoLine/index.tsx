@@ -1,21 +1,18 @@
 import { useState } from "react";
 
-import { DailyWeather } from "@/components/DailyWeather/index";
+import { DailyWeather } from "@/components/Weather/index";
 import {
   InfoLineBody,
   WeatherChoiceButton,
 } from "@/components/WeatherInfoLine/styled";
 import { useAppSelector } from "@/store";
+import { dailyWeatherSelector, hourlyWeatherSelector } from "@/store/selectors";
 //true - daily
 //false - hourly
 export const WeatherInfoLine = () => {
   const [weatherMode, setWeatherMode] = useState(false);
-  const dailyWeather = useAppSelector(
-    ({ dailyWeatherReducer }) => dailyWeatherReducer
-  );
-  const hourlyWeather = useAppSelector(
-    ({ hourWeatherReducer }) => hourWeatherReducer
-  );
+  const dailyWeather = useAppSelector(dailyWeatherSelector);
+  const hourlyWeather = useAppSelector(hourlyWeatherSelector);
 
   const changeModeHandler = () => setWeatherMode((prev) => !prev);
   return (

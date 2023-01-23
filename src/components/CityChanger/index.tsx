@@ -1,5 +1,5 @@
 import { SyntheticEvent, useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { shallowEqual, useDispatch } from "react-redux";
 
 import {
   CityChangerBody,
@@ -9,6 +9,7 @@ import {
 } from "@/components/CityChanger/styled";
 import { useAppSelector } from "@/store";
 import { setCity } from "@/store/actions";
+import { statusSelector } from "@/store/selectors";
 
 export const CityChanger = () => {
   const dispatch = useDispatch();
@@ -18,7 +19,7 @@ export const CityChanger = () => {
     return () => document.removeEventListener("keypress", EnterPressHandler);
   });
 
-  const { city, name } = useAppSelector(({ statusReducer }) => statusReducer);
+  const { city, name } = useAppSelector(statusSelector, shallowEqual);
   const [cityName, setCityName] = useState(city);
 
   const onChangeHandler = (e: SyntheticEvent) => {
