@@ -11,8 +11,8 @@ export const dailyWeatherSelector = ({
 }: IStore): IDailyWeather => dailyWeatherReducer;
 
 export const hourlyWeatherSelector = ({
-  dailyWeatherReducer,
-}: IStore): IHourlyWeather => dailyWeatherReducer;
+  hourWeatherReducer,
+}: IStore): IHourlyWeather => hourWeatherReducer;
 
 export const statusSelector = ({ statusReducer }: IStore): IStatusReducer =>
   statusReducer;

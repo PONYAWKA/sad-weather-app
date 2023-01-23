@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 
 import { apiCalendar, config } from "@/api/googleCalendar";
 import {
@@ -7,19 +8,22 @@ import {
   CalendarDisplay,
   LogButton,
 } from "@/components/Calendar/styled";
+import { CityChanger } from "@/components/CityChanger";
 import { Clock } from "@/components/Clock";
 import { EventList } from "@/components/EventList";
-
-import { CityChanger } from "../CityChanger";
+import { useAppSelector } from "@/store";
+import { setAuth } from "@/store/actions";
+import { statusSelector } from "@/store/selectors";
 
 export const Calendar = () => {
-  const [isAuthorized, setIsAuthorized] = useState(false);
+  const dispatch = useDispatch();
+  const { isAuthorized } = useAppSelector(statusSelector);
 
   useEffect(() => {
     apiCalendar.onLoadCallback = () => {
       window.gapi.auth2.init(config).then(() => {
         const GoogleAuth = window.gapi.auth2.getAuthInstance();
-        setIsAuthorized(GoogleAuth.isSignedIn.get());
+        dispatch(setAuth(GoogleAuth.isSignedIn.get()));
       });
     };
   }, []);
@@ -27,7 +31,7 @@ export const Calendar = () => {
   const handleAuthorize = () => {
     if (isAuthorized) apiCalendar.handleSignoutClick();
     else apiCalendar.handleAuthClick();
-    setIsAuthorized((prev) => !prev);
+    dispatch(setAuth(!isAuthorized));
   };
 
   const authText = isAuthorized ? "Выйти" : "Войти";

@@ -1,4 +1,5 @@
 import {
+  SET_AUTHORIZATION,
   SET_BACKGROUND,
   SET_CITY,
   SET_CITY_NAME,
@@ -12,6 +13,7 @@ const initialState = {
   isLoading: true,
   city: "",
   name: "",
+  isAuthorized: false,
 };
 
 export const statusReducer = (
@@ -27,8 +29,6 @@ export const statusReducer = (
     case SET_LOADING:
       if (typeof payload === "boolean") return { ...state, isLoading: payload };
       return state;
-    default:
-      return state;
     case SET_CITY:
       if (typeof payload === "string") return { ...state, city: payload };
       return state;
@@ -39,6 +39,12 @@ export const statusReducer = (
           city: payload.city,
           name: payload.name ?? state.name,
         };
+      return state;
+    case SET_AUTHORIZATION:
+      if (typeof payload === "boolean")
+        return { ...state, isAuthorized: payload };
+      return state;
+    default:
       return state;
   }
 };

@@ -30,6 +30,7 @@ export interface IStatusReducer {
   isLoading: boolean;
   city: string;
   name: string;
+  isAuthorized: boolean;
 }
 
 export interface IEventsReducer {

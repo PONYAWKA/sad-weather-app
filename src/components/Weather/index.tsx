@@ -9,13 +9,7 @@ import {
 import { getCurrentWeekDay } from "@/utils/getCurrenWeekDay";
 import { getIcon } from "@/utils/getIcon";
 
-export const Weather = ({
-  items,
-  mode,
-}: {
-  items: IItems;
-  mode: boolean;
-}) => {
+export const Weather = ({ items, mode }: { items: IItems; mode: boolean }) => {
   return (
     <DailyWeatherBody>
       {items.days.map(({ temp, icon, date }, i) => (
