@@ -6,7 +6,12 @@ import { Loader } from "@/components/Loader";
 import { WeatherInfoLine } from "@/components/WeatherInfoLine";
 import { WeatherBody, WeatherInfoBody } from "@/pages/Home/styled";
 import { useAppSelector } from "@/store";
-import { getWeather, initPosition, setCity } from "@/store/actions";
+import {
+  getWeather,
+  initPosition,
+  setCity,
+  setCityName,
+} from "@/store/actions";
 import { statusSelector } from "@/store/selectors";
 
 export const HomePage = () => {
@@ -16,19 +21,26 @@ export const HomePage = () => {
 
   const dispatch = useDispatch();
 
-  useEffect(
-    () =>
-      navigator.geolocation.getCurrentPosition(({ coords }) => {
-        setPos({
-          lat: coords.latitude,
-          lon: coords.longitude,
-        });
-        dispatch(initPosition({ lat: lat, lon: lon }));
-        dispatch(getWeather());
-        dispatch(setCity());
-      }),
-    [lat, lon]
-  );
+  useEffect(() => {
+    if (navigator.geolocation)
+      navigator.geolocation.getCurrentPosition(
+        ({ coords }) => {
+          setPos({
+            lat: coords.latitude,
+            lon: coords.longitude,
+          });
+          dispatch(initPosition({ lat: lat, lon: lon }));
+          dispatch(getWeather());
+          dispatch(setCity());
+        },
+        () => {
+          dispatch(initPosition({ lat: -25.763, lon: 28.337 }));
+          dispatch(getWeather());
+          dispatch(setCityName({ city: "Equestria" }));
+        }
+      );
+    else console.log("аза");
+  }, [lat, lon]);
 
   if (isLoading) return <Loader />;
 

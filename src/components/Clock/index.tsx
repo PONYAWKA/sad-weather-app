@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 import {
   ClockBody,
@@ -10,11 +10,10 @@ import { getCurrentTime } from "@/utils/getCurrentTime";
 
 export const Clock = () => {
   const [time, setTime] = useState(getCurrentTime());
-  const timerRef = useRef(0);
   useEffect(() => {
-    timerRef.current = setInterval(() => setTime(getCurrentTime()), 1000);
+    const interval = setInterval(() => setTime(getCurrentTime()), 1000);
     return () => {
-      clearInterval(timerRef.current);
+      clearInterval(interval);
     };
   });
 

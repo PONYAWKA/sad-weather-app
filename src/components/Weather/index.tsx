@@ -6,7 +6,7 @@ import {
   WeatherInfoElementTemp,
   WeatherInfoElementWeekDay,
 } from "@/components/Weather/styled";
-import { getCurrentWeekDay } from "@/utils/getCurrenWeekDay";
+import { getCurrentWeekDay } from "@/utils/getCurrentWeekDay";
 import { getIcon } from "@/utils/getIcon";
 
 export const Weather = ({ items, mode }: { items: IItems; mode: boolean }) => {

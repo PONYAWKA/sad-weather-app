@@ -4,3 +4,4 @@ node_modules
 dist
 crypress
 craco
+setupJest.js

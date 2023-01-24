@@ -42,7 +42,9 @@ export const Calendar = () => {
       <CalendarDisplay>
         <Clock />
         <CalendarContainer>
-          <LogButton onClick={handleAuthorize}>{authText}</LogButton>
+          <LogButton onClick={handleAuthorize} data-cy="auth-button">
+            {authText}
+          </LogButton>
           <EventList isAuthorized={isAuthorized} />
         </CalendarContainer>
       </CalendarDisplay>

@@ -2,11 +2,13 @@ import { RefObject, SyntheticEvent, useEffect, useState } from "react";
 import { usePlacesWidget } from "react-google-autocomplete";
 import { shallowEqual, useDispatch } from "react-redux";
 
+import edit from "@/assets/edit.png";
 import { IEnterEvent, IPlace } from "@/components/CityChanger/interfaces";
 import {
   CityChangerBody,
   CityContainer,
   CityTitle,
+  EditIcon,
 } from "@/components/CityChanger/styled";
 import { useAppSelector } from "@/store";
 import { getWeather, setCityName, setPosition } from "@/store/actions";
@@ -54,7 +56,9 @@ export const CityChanger = () => {
           ref={ref as unknown as RefObject<HTMLTextAreaElement>}
           placeholder="City"
           rows={2}
+          data-cy="Text-Input"
         />
+        <EditIcon src={edit} />
       </CityContainer>
     </CityChangerBody>
   );

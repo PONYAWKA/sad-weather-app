@@ -17,7 +17,7 @@ export const WeatherInfoLine = () => {
   const changeModeHandler = () => setWeatherMode((prev) => !prev);
   return (
     <InfoLineBody>
-      <WeatherChoiceButton onClick={changeModeHandler}>
+      <WeatherChoiceButton onClick={changeModeHandler} data-cy="switch-button">
         {weatherMode ? "Hourly Weather" : "Daily Weather "}
       </WeatherChoiceButton>
       <Weather

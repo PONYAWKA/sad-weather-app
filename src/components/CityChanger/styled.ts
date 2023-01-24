@@ -27,7 +27,7 @@ export const CityTitle = styled.textarea`
   width: 100%;
   overflow: hidden;
   padding: 0;
-  align-content: center;
+  text-align: center;
   font-size: ${({ theme }) => theme.fonts.xx}px;
   color: ${({ theme }) => theme.colors.white};
   word-break: break-all;
@@ -48,4 +48,8 @@ export const ObjectName = styled.div`
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
     margin-left: -${({ theme }) => theme.spaces.mm}px;
   }
+`;
+
+export const EditIcon = styled.img`
+right:50
 `;
