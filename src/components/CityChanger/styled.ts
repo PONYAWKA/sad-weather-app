@@ -12,7 +12,6 @@ export const CityChangerBody = styled.div`
 
 export const CityContainer = styled.div`
   margin-top: ${({ theme }) => theme.spaces.m}px;
-  max-width: ${({ theme }) => theme.spaces.xxl}px;
   @media (max-width: 1024px) {
     margin-top: ${({ theme }) => theme.spaces.ss}px;
     margin-right: -${({ theme }) => theme.spaces.mm}px;
@@ -20,19 +19,22 @@ export const CityContainer = styled.div`
   }
 `;
 
-export const CityTitle = styled.input`
+export const CityTitle = styled.textarea`
   background-color: transparent;
   outline: none;
   border: 0;
   margin: 0;
+  width: 100%;
+  overflow: hidden;
   padding: 0;
   align-content: center;
   font-size: ${({ theme }) => theme.fonts.xx}px;
   color: ${({ theme }) => theme.colors.white};
-  max-width: ${({ theme }) => theme.spaces.xxl}px;
+  word-break: break-all;
   @media (max-width: 767px) {
     text-align: center;
     margin-left: -${({ theme }) => theme.spaces.mm}px;
+    font-size: ${({ theme }) => theme.fonts.m}px;
   }
   @media (max-width: 1024px) {
     margin-right: -${({ theme }) => theme.spaces.mm}px;

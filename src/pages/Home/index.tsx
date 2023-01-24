@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { shallowEqual, useDispatch } from "react-redux";
 
 import { Calendar } from "@/components/Calendar";
+import { Loader } from "@/components/Loader";
 import { WeatherInfoLine } from "@/components/WeatherInfoLine";
 import { WeatherBody, WeatherInfoBody } from "@/pages/Home/styled";
 import { useAppSelector } from "@/store";
@@ -29,7 +30,7 @@ export const HomePage = () => {
     [lat, lon]
   );
 
-  if (isLoading) return <div>loading</div>;
+  if (isLoading) return <Loader />;
 
   return (
     <WeatherBody image={url}>

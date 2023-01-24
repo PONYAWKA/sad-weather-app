@@ -9,6 +9,7 @@ const colors = {
   background: css`
     background-color: rgba(14, 13, 33, 0.8);
   `,
+  red: "#dc143c",
 };
 const spaces = {
   ss: 5,
