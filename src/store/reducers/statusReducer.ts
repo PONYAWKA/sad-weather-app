@@ -12,7 +12,6 @@ const initialState = {
   url: " ",
   isLoading: true,
   city: "",
-  name: "",
   isAuthorized: false,
 };
 
@@ -37,7 +36,6 @@ export const statusReducer = (
         return {
           ...state,
           city: payload.city,
-          name: payload.name ?? state.name,
         };
       return state;
     case SET_AUTHORIZATION:

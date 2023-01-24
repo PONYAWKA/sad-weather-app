@@ -41,15 +41,6 @@ export const CityTitle = styled.textarea`
   }
 `;
 
-export const ObjectName = styled.div`
-  color: ${({ theme }) => theme.colors.white};
-  font-size: ${({ theme }) => theme.fonts.m}px;
-  text-align: center;
-  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
-    margin-left: -${({ theme }) => theme.spaces.mm}px;
-  }
-`;
-
 export const EditIcon = styled.img`
   width: ${({ theme }) => theme.spaces.m}px;
   height: ${({ theme }) => theme.spaces.m}px;

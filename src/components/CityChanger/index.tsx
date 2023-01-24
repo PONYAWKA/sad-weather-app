@@ -10,6 +10,7 @@ import {
   CityTitle,
   EditIcon,
 } from "@/components/CityChanger/styled";
+import { GoogleMapApiKey } from "@/constants";
 import { useAppSelector } from "@/store";
 import { getWeather, setCityName, setPosition } from "@/store/actions";
 import { statusSelector } from "@/store/selectors";
@@ -42,10 +43,9 @@ export const CityChanger = () => {
   };
 
   const { ref } = usePlacesWidget({
-    apiKey: "AIzaSyC4WRUMHGpRaDxwWqWNCabv45EWW7K7PmY",
+    apiKey: GoogleMapApiKey,
     onPlaceSelected: autoCompleteHandler,
   });
-  console.log(cityName);
 
   return (
     <CityChangerBody>

@@ -29,7 +29,6 @@ export interface IStatusReducer {
   url: string;
   isLoading: boolean;
   city: string;
-  name: string;
   isAuthorized: boolean;
 }
 

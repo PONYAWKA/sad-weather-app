@@ -8,3 +8,5 @@ export const color = {
   `,
   red: "#dc143c",
 };
+
+export const GoogleMapApiKey = "AIzaSyC4WRUMHGpRaDxwWqWNCabv45EWW7K7PmY";

@@ -61,7 +61,7 @@ export const setIsLoading = (payload: boolean) => ({
 export const setCity = () => ({
   type: SET_CITY,
 });
-export const setCityName = (payload: { city: string; name?: string }) => ({
+export const setCityName = (payload: { city: string }) => ({
   type: SET_CITY_NAME,
   payload: payload,
 });

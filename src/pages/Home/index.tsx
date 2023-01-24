@@ -22,24 +22,22 @@ export const HomePage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (navigator.geolocation)
-      navigator.geolocation.getCurrentPosition(
-        ({ coords }) => {
-          setPos({
-            lat: coords.latitude,
-            lon: coords.longitude,
-          });
-          dispatch(initPosition({ lat: lat, lon: lon }));
-          dispatch(getWeather());
-          dispatch(setCity());
-        },
-        () => {
-          dispatch(initPosition({ lat: -25.763, lon: 28.337 }));
-          dispatch(getWeather());
-          dispatch(setCityName({ city: "Equestria" }));
-        }
-      );
-    else console.log("аза");
+    navigator.geolocation.getCurrentPosition(
+      ({ coords }) => {
+        setPos({
+          lat: coords.latitude,
+          lon: coords.longitude,
+        });
+        dispatch(initPosition({ lat: lat, lon: lon }));
+        dispatch(getWeather());
+        dispatch(setCity());
+      },
+      () => {
+        dispatch(initPosition({ lat: 55.75, lon: 37.62 }));
+        dispatch(getWeather());
+        dispatch(setCity());
+      }
+    );
   }, [lat, lon]);
 
   if (isLoading) return <Loader />;
