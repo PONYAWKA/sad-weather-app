@@ -21,10 +21,7 @@ export const Calendar = () => {
 
   useEffect(() => {
     apiCalendar.onLoadCallback = () => {
-      window.gapi.auth2.init(config).then(() => {
-        const GoogleAuth = window.gapi.auth2.getAuthInstance();
-        dispatch(setAuth(GoogleAuth.isSignedIn.get()));
-      });
+      window.gapi.auth2.init(config);
     };
   }, []);
 

@@ -6,12 +6,7 @@ import { Loader } from "@/components/Loader";
 import { WeatherInfoLine } from "@/components/WeatherInfoLine";
 import { WeatherBody, WeatherInfoBody } from "@/pages/Home/styled";
 import { useAppSelector } from "@/store";
-import {
-  getWeather,
-  initPosition,
-  setCity,
-  setCityName,
-} from "@/store/actions";
+import { getWeather, initPosition, setCity } from "@/store/actions";
 import { statusSelector } from "@/store/selectors";
 
 export const HomePage = () => {
