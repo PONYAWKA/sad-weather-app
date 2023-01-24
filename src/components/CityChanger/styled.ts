@@ -51,5 +51,8 @@ export const ObjectName = styled.div`
 `;
 
 export const EditIcon = styled.img`
-right:50
+  width: ${({ theme }) => theme.spaces.m}px;
+  height: ${({ theme }) => theme.spaces.m}px;
+  right: 18%;
+  position: absolute;
 `;
