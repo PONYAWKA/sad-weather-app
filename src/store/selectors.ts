@@ -1,3 +1,4 @@
+import { IPosition } from "@/store/actions/Interfaces";
 import { IStore } from "@/store/interfaces";
 import {
   IDailyWeather,
@@ -19,3 +20,6 @@ export const statusSelector = ({ statusReducer }: IStore): IStatusReducer =>
 
 export const eventSelector = ({ eventsReducer }: IStore): IEventsReducer =>
   eventsReducer;
+
+export const positionSelector = ({ positionReducer }: IStore): IPosition =>
+  positionReducer;

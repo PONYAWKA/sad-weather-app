@@ -5,7 +5,6 @@ export const getHourlyWeather = async (lat: number, lon: number) => {
   const data = await fetch(
     `${OPEN_WEATHER_BASE_URL}/forecast?lat=${lat}&lon=${lon}&appid=${OPEN_WEATHER_API_KEY}&cnt=8&units=metric&mode=JSON`
   ).then((data) => data.json());
-  const city = data.city.name;
   const useFullData = [
     ...data.list.map((e: ImapElement) => ({
       date: e.dt_txt.split(" ")[1].slice(0, -3),
@@ -14,5 +13,5 @@ export const getHourlyWeather = async (lat: number, lon: number) => {
     })),
   ];
 
-  return { city, days: useFullData };
+  return { days: useFullData };
 };

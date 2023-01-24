@@ -12,7 +12,7 @@ import { CityChanger } from "@/components/CityChanger";
 import { Clock } from "@/components/Clock";
 import { EventList } from "@/components/EventList";
 import { useAppSelector } from "@/store";
-import { setAuth } from "@/store/actions";
+import { setAuth, setEvents } from "@/store/actions";
 import { statusSelector } from "@/store/selectors";
 
 export const Calendar = () => {
@@ -29,8 +29,10 @@ export const Calendar = () => {
   }, []);
 
   const handleAuthorize = () => {
-    if (isAuthorized) apiCalendar.handleSignoutClick();
-    else apiCalendar.handleAuthClick();
+    if (isAuthorized) {
+      apiCalendar.handleSignoutClick();
+      dispatch(setEvents([]));
+    } else apiCalendar.handleAuthClick();
     dispatch(setAuth(!isAuthorized));
   };
 

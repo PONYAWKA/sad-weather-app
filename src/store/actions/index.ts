@@ -25,7 +25,7 @@ export const initPosition = (payload: IPosition) => ({
   payload: payload,
 });
 
-export const setEvents = (payload: IEventData) => ({
+export const setEvents = (payload: IEventData[]) => ({
   type: SET_EVENTS,
   payload: payload,
 });
@@ -58,9 +58,8 @@ export const setIsLoading = (payload: boolean) => ({
   payload: payload,
 });
 
-export const setCity = (payload: string) => ({
+export const setCity = () => ({
   type: SET_CITY,
-  payload: payload,
 });
 export const setCityName = (payload: { city: string; name?: string }) => ({
   type: SET_CITY_NAME,

@@ -1,46 +1,49 @@
-import { SyntheticEvent, useEffect, useState } from "react";
+import { RefObject, SyntheticEvent, useState } from "react";
+import { usePlacesWidget } from "react-google-autocomplete";
 import { shallowEqual, useDispatch } from "react-redux";
 
+import { IPlace } from "@/components/CityChanger/interfaces";
 import {
   CityChangerBody,
   CityContainer,
   CityTitle,
-  ObjectName,
 } from "@/components/CityChanger/styled";
 import { useAppSelector } from "@/store";
-import { setCity } from "@/store/actions";
+import { getWeather, setCity, setCityName, setPosition } from "@/store/actions";
 import { statusSelector } from "@/store/selectors";
 
 export const CityChanger = () => {
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    document.addEventListener("keypress", EnterPressHandler);
-    return () => document.removeEventListener("keypress", EnterPressHandler);
-  });
-
-  const { city, name } = useAppSelector(statusSelector, shallowEqual);
-  const [cityName, setCityName] = useState(city);
+  const { city } = useAppSelector(statusSelector, shallowEqual);
+  const [cityName, setName] = useState(city);
 
   const onChangeHandler = (e: SyntheticEvent) => {
-    setCityName((e.target as HTMLInputElement).value);
+    setName((e.target as HTMLInputElement).value);
   };
 
-  const onConfirmHandler = () => {
-    if (city !== cityName) dispatch(setCity(cityName));
+  const autoCompleteHandler = (place: IPlace) => {
+    const { lat, lng } = place.geometry.location;
+    console.log(place);
+
+    dispatch(setPosition({ lat: lat(), lon: lng() }));
+    dispatch(setCityName({ city: place.formatted_address }));
+    dispatch(getWeather());
   };
 
-  const EnterPressHandler = (e: { key: string }) =>
-    e.key === "Enter" ? onConfirmHandler() : null;
+  const { ref } = usePlacesWidget({
+    apiKey: "AIzaSyC4WRUMHGpRaDxwWqWNCabv45EWW7K7PmY",
+    onPlaceSelected: autoCompleteHandler,
+  });
+
   return (
     <CityChangerBody>
       <CityContainer>
         <CityTitle
-          onBlur={onConfirmHandler}
           value={cityName}
           onChange={onChangeHandler}
+          ref={ref as unknown as RefObject<HTMLInputElement>}
         />
-        <ObjectName>{name}</ObjectName>
       </CityContainer>
     </CityChangerBody>
   );

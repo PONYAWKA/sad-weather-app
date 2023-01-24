@@ -10,8 +10,6 @@ export const getEventsApi = async (): Promise<IEventData> => {
     singleEvents: true,
     orderBy: "startTime",
   });
-  console.log(data);
-
   const usefulData = [
     data.result.items?.map((e: ImapElement) => ({
       eventText: e.summary,

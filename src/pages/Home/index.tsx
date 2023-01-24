@@ -5,7 +5,7 @@ import { Calendar } from "@/components/Calendar";
 import { WeatherInfoLine } from "@/components/WeatherInfoLine";
 import { WeatherBody, WeatherInfoBody } from "@/pages/Home/styled";
 import { useAppSelector } from "@/store";
-import { getWeather, initPosition } from "@/store/actions";
+import { getWeather, initPosition, setCity } from "@/store/actions";
 import { statusSelector } from "@/store/selectors";
 
 export const HomePage = () => {
@@ -24,6 +24,7 @@ export const HomePage = () => {
         });
         dispatch(initPosition({ lat: lat, lon: lon }));
         dispatch(getWeather());
+        dispatch(setCity());
       }),
     [lat, lon]
   );

@@ -1,6 +1,7 @@
 import { call, put } from "redux-saga/effects";
 
 import { setIsLoading } from "@/store/actions";
+import { cityWorker } from "@/store/sagas/workerSaga/cityWorker";
 import { dailyWorker } from "@/store/sagas/workerSaga/dailyWorker";
 import { hourWorker } from "@/store/sagas/workerSaga/hourWorker";
 

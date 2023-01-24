@@ -6,7 +6,7 @@ import { setEvents } from "@/store/actions";
 
 export function* eventWorker() {
   try {
-    const data: IEventData = yield getEventsApi();
+    const data: IEventData[] = yield getEventsApi();
     console.log(data);
 
     yield put(setEvents(data));
