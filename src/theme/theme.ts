@@ -1,15 +1,13 @@
-import { css } from "styled-components";
+import { color } from "@/constants";
 
 const padding = {
   s: 5,
 };
 const colors = {
-  white: "#ffffff",
-  black: "#012021",
-  background: css`
-    background-color: rgba(14, 13, 33, 0.8);
-  `,
-  red: "#dc143c",
+  white: color.white,
+  black: color.black,
+  background: color.gray,
+  red: color.red,
 };
 const spaces = {
   ss: 5,
@@ -17,7 +15,9 @@ const spaces = {
   m: 20,
   mm: 40,
   x: 100,
+  xm: 160,
   xx: 200,
+  xxx: 300,
   xxl: 400,
 };
 const fonts = {
@@ -26,4 +26,13 @@ const fonts = {
   xx: 68,
   xxl: 72,
 };
-export const theme = { padding, colors, spaces, fonts };
+
+const breakPoints = {
+  mobile: 426,
+  tablet: 767,
+  laptop: 1024,
+  laptopH: 741,
+  laptopW: 975,
+  laptopL: 1310,
+};
+export const theme = { padding, colors, spaces, fonts, breakPoints };

@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const CityChangerBody = styled.div`
-  @media (max-width: 767px) {
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
     margin: ${({ theme }) => theme.spaces.mm}px 0;
   }
-  @media (max-height: 741px) {
+  @media (max-height: ${({ theme }) => theme.breakPoints.laptopH}px) {
     margin: 0;
     margin-bottom: ${({ theme }) => theme.spaces.mm}px;
   }
@@ -12,7 +12,7 @@ export const CityChangerBody = styled.div`
 
 export const CityContainer = styled.div`
   margin-top: ${({ theme }) => theme.spaces.m}px;
-  @media (max-width: 1024px) {
+  @media (max-width: ${({ theme }) => theme.breakPoints.laptop}px) {
     margin-top: ${({ theme }) => theme.spaces.ss}px;
     margin-right: -${({ theme }) => theme.spaces.mm}px;
     text-align: center;
@@ -31,12 +31,12 @@ export const CityTitle = styled.textarea`
   font-size: ${({ theme }) => theme.fonts.xx}px;
   color: ${({ theme }) => theme.colors.white};
   word-break: break-all;
-  @media (max-width: 767px) {
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
     text-align: center;
     margin-left: -${({ theme }) => theme.spaces.mm}px;
     font-size: ${({ theme }) => theme.fonts.m}px;
   }
-  @media (max-width: 1024px) {
+  @media (max-width: ${({ theme }) => theme.breakPoints.laptop}px) {
     margin-right: -${({ theme }) => theme.spaces.mm}px;
   }
 `;
@@ -45,7 +45,7 @@ export const ObjectName = styled.div`
   color: ${({ theme }) => theme.colors.white};
   font-size: ${({ theme }) => theme.fonts.m}px;
   text-align: center;
-  @media (max-width: 767px) {
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
     margin-left: -${({ theme }) => theme.spaces.mm}px;
   }
 `;

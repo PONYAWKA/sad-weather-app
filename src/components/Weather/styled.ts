@@ -7,21 +7,21 @@ export const DailyWeatherBody = styled.div`
   height: 100%;
   overflow-x: scroll;
   box-sizing: border-box;
-  @media (min-width: 1310px) {
+  @media (min-width: ${({ theme }) => theme.breakPoints.laptopL}px) {
     justify-content: center;
     overflow-x: hidden;
   }
   &::-webkit-scrollbar {
-    width: 10px;
+    width: ${({ theme }) => theme.spaces.s}px;
   }
 
   &::-webkit-scrollbar-track {
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
+    border-radius: ${({ theme }) => theme.spaces.s}px;
   }
 
   &::-webkit-scrollbar-thumb {
-    border-radius: 10px;
+    border-radius: ${({ theme }) => theme.spaces.s}px;
     box-shadow: inset 0 0 ${({ theme }) => theme.spaces.s}px
       ${({ theme }) => theme.colors.white};
   }

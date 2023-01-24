@@ -28,24 +28,24 @@ export const EventElementText = styled.div`
 export const EventListContainer = styled.div`
   display: flex;
   flex-direction: column;
-  max-height: 160px;
+  max-height: ${({ theme }) => theme.spaces.xm}px;
   overflow-y: scroll;
   &::-webkit-scrollbar {
-    width: 10px;
+    width: ${({ theme }) => theme.spaces.s}px;
   }
 
   &::-webkit-scrollbar-track {
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
+    border-radius: ${({ theme }) => theme.spaces.s}px;
   }
 
   &::-webkit-scrollbar-thumb {
-    border-radius: 10px;
+    border-radius: ${({ theme }) => theme.spaces.s}px;
     box-shadow: inset 0 0 ${({ theme }) => theme.spaces.s}px
       ${({ theme }) => theme.colors.white};
   }
-  @media (min-height: 975px) {
-    max-height: 300px;
+  @media (min-height: ${({ theme }) => theme.breakPoints.laptopW}px) {
+    max-height: ${({ theme }) => theme.spaces.xxx}px;
   }
 `;
 export const EventElementTime = styled.div`

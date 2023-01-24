@@ -3,13 +3,13 @@ import styled from "styled-components";
 export const InfoLineBody = styled.div`
   ${({ theme }) => theme.colors.background};
   padding-bottom: ${({ theme }) => theme.spaces.m}px;
-  @media (max-width: 767px) {
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
     padding-bottom: ${({ theme }) => theme.spaces.m}px;
   }
-  @media (max-width: 1310px) {
+  @media (max-width: ${({ theme }) => theme.breakPoints.laptopL}px) {
     padding-bottom: ${({ theme }) => theme.spaces.ss}px;
   }
-  @media (max-width: 426px) {
+  @media (max-width: ${({ theme }) => theme.breakPoints.mobile}px) {
     padding-bottom: ${({ theme }) => theme.spaces.mm}px;
   }
 `;
