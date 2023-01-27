@@ -11,7 +11,7 @@ export const WeatherBody = styled.div<PropsType>`
   background-image: url(${({ image }) => image});
   width: 100%;
   height: 100vh;
-  @media (max-width: 767px) {
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
     background: none;
   }
 `;
@@ -21,10 +21,11 @@ export const WeatherInfoBody = styled.div<PropsType>`
   width: 90%;
   height: 80%;
   background-image: url(${({ image }) => image});
-  box-shadow: -10px 5px 5px #141f25;
-  max-width: 1920px;
-  max-height: 1080px;
-  @media (max-width: 767px) {
+  box-shadow: -${({ theme }) => theme.spaces.s}px ${({ theme }) =>
+      theme.spaces.ss}px ${({ theme }) => theme.spaces.ss}px ${({ theme }) => theme.colors.grayShadow};
+  max-width: ${({ theme }) => theme.spaces.maxX}px;
+  max-height: ${({ theme }) => theme.spaces.maxY}px;
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
     width: 100%;
     height: 100%;
   }

@@ -1,10 +1,4 @@
-import {
-  SET_AUTHORIZATION,
-  SET_BACKGROUND,
-  SET_CITY,
-  SET_CITY_NAME,
-  SET_LOADING,
-} from "@/store/actions";
+import { actionsTypes } from "@/constants";
 import { actionType, IStatusReducer } from "@/store/reducers/interfaces";
 import { getBackgroundImageUrLv1 } from "@/utils/getBackgroundImageUrl";
 
@@ -20,25 +14,25 @@ export const statusReducer = (
   { type, payload }: actionType
 ) => {
   switch (type) {
-    case SET_BACKGROUND: {
+    case actionsTypes.SET_BACKGROUND: {
       if (typeof payload === "string")
         return { ...state, url: getBackgroundImageUrLv1(payload) };
       return state;
     }
-    case SET_LOADING:
+    case actionsTypes.SET_LOADING:
       if (typeof payload === "boolean") return { ...state, isLoading: payload };
       return state;
-    case SET_CITY:
+    case actionsTypes.SET_CITY:
       if (typeof payload === "string") return { ...state, city: payload };
       return state;
-    case SET_CITY_NAME:
+    case actionsTypes.SET_CITY_NAME:
       if (typeof payload === "object")
         return {
           ...state,
           city: payload.city,
         };
       return state;
-    case SET_AUTHORIZATION:
+    case actionsTypes.SET_AUTHORIZATION:
       if (typeof payload === "boolean")
         return { ...state, isAuthorized: payload };
       return state;

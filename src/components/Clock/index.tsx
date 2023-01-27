@@ -15,7 +15,7 @@ export const Clock = () => {
     return () => {
       clearInterval(interval);
     };
-  });
+  }, []);
 
   return (
     <ClockBody>

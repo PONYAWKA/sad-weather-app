@@ -1,40 +1,16 @@
-import { useEffect, useState } from "react";
-import { shallowEqual, useDispatch } from "react-redux";
+import { shallowEqual } from "react-redux";
 
 import { Calendar } from "@/components/Calendar";
 import { Loader } from "@/components/Loader";
 import { WeatherInfoLine } from "@/components/WeatherInfoLine";
+import { useGeoLocation } from "@/hooks/useGeoLocation";
 import { WeatherBody, WeatherInfoBody } from "@/pages/Home/styled";
 import { useAppSelector } from "@/store";
-import { getWeather, initPosition, setCity } from "@/store/actions";
 import { statusSelector } from "@/store/selectors";
 
 export const HomePage = () => {
   const { url, isLoading } = useAppSelector(statusSelector, shallowEqual);
-
-  const [{ lat, lon }, setPos] = useState({ lat: 0, lon: 0 });
-
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    navigator.geolocation.getCurrentPosition(
-      ({ coords }) => {
-        setPos({
-          lat: coords.latitude,
-          lon: coords.longitude,
-        });
-        dispatch(initPosition({ lat: lat, lon: lon }));
-        dispatch(getWeather());
-        dispatch(setCity());
-      },
-      () => {
-        dispatch(initPosition({ lat: 55.75, lon: 37.62 }));
-        dispatch(getWeather());
-        dispatch(setCity());
-      }
-    );
-  }, [lat, lon]);
-
+  useGeoLocation();
   if (isLoading) return <Loader />;
 
   return (

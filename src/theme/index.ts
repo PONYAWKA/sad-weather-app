@@ -1,13 +1,16 @@
-import { color } from "@/constants";
+import { css } from "styled-components";
 
 const padding = {
   s: 5,
 };
 const colors = {
-  white: color.white,
-  black: color.black,
-  background: color.gray,
-  red: color.red,
+  white: "#ffffff",
+  black: "#012021",
+  background: css`
+    background-color: rgba(14, 13, 33, 0.8);
+  `,
+  red: "#dc143c",
+  grayShadow: "#141f25",
 };
 const spaces = {
   ss: 5,
@@ -19,6 +22,8 @@ const spaces = {
   xx: 200,
   xxx: 300,
   xxl: 400,
+  maxX: 1920,
+  maxY: 1080,
 };
 const fonts = {
   m: 24,

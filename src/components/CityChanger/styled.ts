@@ -2,11 +2,10 @@ import styled from "styled-components";
 
 export const CityChangerBody = styled.div`
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
-    margin: ${({ theme }) => theme.spaces.mm}px 0;
+    margin-top: ${({ theme }) => theme.spaces.m}px;
   }
   @media (max-height: ${({ theme }) => theme.breakPoints.laptopH}px) {
-    margin: 0;
-    margin-bottom: ${({ theme }) => theme.spaces.mm}px;
+    margin-top: ${({ theme }) => theme.spaces.m}px;
   }
 `;
 
@@ -24,20 +23,17 @@ export const CityTitle = styled.textarea`
   outline: none;
   border: 0;
   margin: 0;
-  width: 100%;
   overflow: hidden;
   padding: 0;
   text-align: center;
   font-size: ${({ theme }) => theme.fonts.xx}px;
   color: ${({ theme }) => theme.colors.white};
   word-break: break-all;
+  max-width: ${({ theme }) => theme.spaces.xxl}px;
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
     text-align: center;
     margin-left: -${({ theme }) => theme.spaces.mm}px;
-    font-size: ${({ theme }) => theme.fonts.m}px;
-  }
-  @media (max-width: ${({ theme }) => theme.breakPoints.laptop}px) {
-    margin-right: -${({ theme }) => theme.spaces.mm}px;
+    max-height: ${({ theme }) => theme.spaces.x}px;
   }
 `;
 

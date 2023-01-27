@@ -1,72 +1,58 @@
 import { IEventData } from "@/api/googleCalendar/interfaces";
+import { actionsTypes } from "@/constants";
 import { IPosition } from "@/store/actions/Interfaces";
 import { IDailyWeather, IHourlyWeather } from "@/store/reducers/interfaces";
 
-export const SET_POSITION = "SET_POSITION";
-export const INIT_POSITION = "INIT_POSITION";
-
-export const GET_WEATHER = "GET_WEATHER";
-
-export const ADD_DAILY_WEATHER = "ADD_DAILY_WEATHER";
-
-export const ADD_HOURLY_WEATHER = "ADD_HOURLY_WEATHER";
-
-export const SET_BACKGROUND = "SET_BACKGROUND";
-export const SET_LOADING = "SET_LOADING";
-export const SET_CITY = "SET_CITY";
-export const SET_CITY_NAME = "SET_CITY_NAME";
-export const SET_AUTHORIZATION = "SET_AUTHORIZATION";
-
-export const SET_EVENTS = "SET_EVENTS";
-export const GET_EVENTS = "GET_EVENTS";
-
 export const initPosition = (payload: IPosition) => ({
-  type: INIT_POSITION,
+  type: actionsTypes.INIT_POSITION,
   payload: payload,
 });
 
 export const setEvents = (payload: IEventData[]) => ({
-  type: SET_EVENTS,
+  type: actionsTypes.SET_EVENTS,
   payload: payload,
 });
-export const getEvents = () => ({ type: GET_EVENTS });
+export const getEvents = () => ({ type: actionsTypes.GET_EVENTS });
 
 export const setPosition = (payload: IPosition) => ({
-  type: SET_POSITION,
+  type: actionsTypes.SET_POSITION,
   payload: payload,
 });
 
+export const setPositionByName = () => ({
+  type: actionsTypes.SET_POSITION_BY_NAME,
+});
 export const setAuth = (payload: boolean) => ({
-  type: SET_AUTHORIZATION,
+  type: actionsTypes.SET_AUTHORIZATION,
   payload: payload,
 });
 
-export const getWeather = () => ({ type: GET_WEATHER });
+export const getWeather = () => ({ type: actionsTypes.GET_WEATHER });
 
 export const addDailyWeather = (payload: IDailyWeather) => ({
-  type: ADD_DAILY_WEATHER,
+  type: actionsTypes.ADD_DAILY_WEATHER,
   payload: payload,
 });
 
 export const setBackground = (payload: string) => ({
-  type: SET_BACKGROUND,
+  type: actionsTypes.SET_BACKGROUND,
   payload: payload,
 });
 
 export const setIsLoading = (payload: boolean) => ({
-  type: SET_LOADING,
+  type: actionsTypes.SET_LOADING,
   payload: payload,
 });
 
 export const setCity = () => ({
-  type: SET_CITY,
+  type: actionsTypes.SET_CITY,
 });
 export const setCityName = (payload: { city: string }) => ({
-  type: SET_CITY_NAME,
+  type: actionsTypes.SET_CITY_NAME,
   payload: payload,
 });
 
 export const addHourlyWeather = (payload: IHourlyWeather) => ({
-  type: ADD_HOURLY_WEATHER,
+  type: actionsTypes.ADD_HOURLY_WEATHER,
   payload: payload,
 });

@@ -1,4 +1,4 @@
-import { SET_EVENTS } from "@/store/actions";
+import { actionsTypes } from "@/constants";
 import { actionType, IEventsReducer } from "@/store/reducers/interfaces";
 
 const initState = {
@@ -10,7 +10,7 @@ export const eventsReducer = (
   { type, payload }: actionType
 ) => {
   switch (type) {
-    case SET_EVENTS:
+    case actionsTypes.SET_EVENTS:
       return { ...state, events: payload };
     default:
       return state;

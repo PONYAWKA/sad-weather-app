@@ -19,7 +19,7 @@ export const EventList = ({ isAuthorized }: IProps) => {
 
   const { events }: IEventsReducer = useAppSelector(eventSelector);
 
-  const handleGetEvents = async () => {
+  const handleGetEvents = () => {
     dispatch(getEvents());
   };
 

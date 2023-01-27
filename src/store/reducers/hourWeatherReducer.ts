@@ -1,4 +1,5 @@
-import { ADD_HOURLY_WEATHER } from "../actions";
+import { actionsTypes } from "@/constants";
+
 import { action, IHourlyWeather } from "./interfaces";
 
 const initState = {
@@ -10,7 +11,7 @@ export const hourWeatherReducer = (
   { type, payload }: action
 ) => {
   switch (type) {
-    case ADD_HOURLY_WEATHER:
+    case actionsTypes.ADD_HOURLY_WEATHER:
       if ("days" in payload) return { ...state, days: payload.days };
       return state;
     default:

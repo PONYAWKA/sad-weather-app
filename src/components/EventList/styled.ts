@@ -24,12 +24,14 @@ export const EventElementBody = styled.div`
 export const EventElementText = styled.div`
   text-align: center;
   width: 100%;
+  padding: 0 ${({ theme }) => theme.spaces.s}px;
 `;
 export const EventListContainer = styled.div`
   display: flex;
   flex-direction: column;
   max-height: ${({ theme }) => theme.spaces.xm}px;
   overflow-y: scroll;
+
   &::-webkit-scrollbar {
     width: ${({ theme }) => theme.spaces.s}px;
   }

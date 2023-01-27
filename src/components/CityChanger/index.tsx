@@ -10,9 +10,13 @@ import {
   CityTitle,
   EditIcon,
 } from "@/components/CityChanger/styled";
-import { GoogleMapApiKey } from "@/constants";
 import { useAppSelector } from "@/store";
-import { getWeather, setCityName, setPosition } from "@/store/actions";
+import {
+  getWeather,
+  setCityName,
+  setPosition,
+  setPositionByName,
+} from "@/store/actions";
 import { statusSelector } from "@/store/selectors";
 import { getCityName } from "@/utils/getCityName";
 
@@ -23,7 +27,9 @@ export const CityChanger = () => {
   const [cityName, setName] = useState(city);
 
   const EnterHandler = (e: IEnterEvent) => {
-    if (e.key === "Enter") e.preventDefault();
+    if (e.key === "Enter") {
+      e.preventDefault();
+    }
   };
 
   useEffect(() => {
@@ -36,21 +42,32 @@ export const CityChanger = () => {
   };
 
   const autoCompleteHandler = (place: IPlace) => {
-    const { lat, lng } = place.geometry.location;
-    dispatch(setPosition({ lat: lat(), lon: lng() }));
-    dispatch(setCityName({ city: getCityName(place.formatted_address) }));
-    dispatch(getWeather());
+    if (place.name) {
+      dispatch(setCityName({ city: getCityName(place.name) }));
+      dispatch(setPositionByName());
+      dispatch(getWeather());
+    } else {
+      const { lat, lng } = place.geometry.location;
+      dispatch(setPosition({ lat: lat(), lon: lng() }));
+      dispatch(setCityName({ city: getCityName(place.formatted_address) }));
+      dispatch(getWeather());
+    }
   };
 
   const { ref } = usePlacesWidget({
-    apiKey: GoogleMapApiKey,
+    apiKey: process.env.REACT_APP_GOOGLE_API_KEY,
     onPlaceSelected: autoCompleteHandler,
   });
+
+  const onFocusHandler = () => {
+    setName("");
+  };
 
   return (
     <CityChangerBody>
       <CityContainer>
         <CityTitle
+          onFocus={onFocusHandler}
           value={cityName}
           onChange={onChangeHandler}
           ref={ref as unknown as RefObject<HTMLTextAreaElement>}

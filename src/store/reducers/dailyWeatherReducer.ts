@@ -1,4 +1,4 @@
-import { ADD_DAILY_WEATHER } from "@/store/actions";
+import { actionsTypes } from "@/constants";
 import { action, IDailyWeather } from "@/store/reducers/interfaces";
 import { getBackgroundImageUrLv2 } from "@/utils/getBackgroundImageUrl";
 
@@ -11,7 +11,7 @@ export const dailyWeatherReducer = (
   { type, payload }: action
 ) => {
   switch (type) {
-    case ADD_DAILY_WEATHER:
+    case actionsTypes.ADD_DAILY_WEATHER:
       if ("curIcon" in payload)
         return {
           ...payload,
