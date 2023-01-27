@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { useDispatch } from "react-redux";
 
 import { ImapElement, IProps } from "@/components/EventList/interfaces";
@@ -14,7 +15,7 @@ import { getEvents } from "@/store/actions";
 import { IEventsReducer } from "@/store/reducers/interfaces";
 import { eventSelector } from "@/store/selectors";
 
-export const EventList = ({ isAuthorized }: IProps) => {
+const EventListMemo = ({ isAuthorized }: IProps) => {
   const dispatch = useDispatch();
 
   const { events }: IEventsReducer = useAppSelector(eventSelector);
@@ -41,3 +42,4 @@ export const EventList = ({ isAuthorized }: IProps) => {
     );
   return null;
 };
+export const EventList = memo(EventListMemo);

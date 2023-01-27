@@ -13,7 +13,6 @@ export const CityContainer = styled.div`
   margin-top: ${({ theme }) => theme.spaces.m}px;
   @media (max-width: ${({ theme }) => theme.breakPoints.laptop}px) {
     margin-top: ${({ theme }) => theme.spaces.ss}px;
-    margin-right: -${({ theme }) => theme.spaces.mm}px;
     text-align: center;
   }
 `;

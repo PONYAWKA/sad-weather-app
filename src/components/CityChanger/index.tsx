@@ -75,7 +75,7 @@ export const CityChanger = () => {
           rows={2}
           data-cy="Text-Input"
         />
-        <EditIcon src={edit} />
+        <EditIcon src={edit} alt="Loading..." title="Edit icon" />
       </CityContainer>
     </CityChangerBody>
   );

@@ -1,8 +1,8 @@
-import { Component, ErrorInfo } from "react";
+import { ErrorInfo, PureComponent } from "react";
 
 import { Props, State } from "@/components/ErrorBoundary/interfaces";
 
-class ErrorBoundary extends Component<Props, State> {
+class ErrorBoundary extends PureComponent<Props, State> {
   public state: State = {
     hasError: false,
   };
