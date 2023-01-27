@@ -10,7 +10,7 @@ body{
     font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
     background-color: ${({ theme }) => theme.colors.grayShadow};
-  }
+    }
     
 }
 button {

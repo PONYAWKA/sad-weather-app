@@ -3,7 +3,7 @@ import { actionType, IStatusReducer } from "@/store/reducers/interfaces";
 import { getBackgroundImageUrLv1 } from "@/utils/getBackgroundImageUrl";
 
 const initialState = {
-  url: " ",
+  url: "",
   isLoading: true,
   city: "",
   isAuthorized: false,

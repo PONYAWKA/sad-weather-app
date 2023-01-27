@@ -21,6 +21,8 @@ export const CityTitle = styled.textarea`
   background-color: transparent;
   outline: none;
   border: 0;
+  text-decoration: underline;
+  resize: none;
   margin: 0;
   overflow: hidden;
   padding: 0;
