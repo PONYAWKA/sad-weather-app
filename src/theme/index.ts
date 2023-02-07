@@ -33,6 +33,7 @@ const fonts = {
 };
 
 const breakPoints = {
+  fold: 280,
   mobile: 426,
   tablet: 767,
   laptop: 1024,

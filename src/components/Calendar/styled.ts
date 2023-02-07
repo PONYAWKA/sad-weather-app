@@ -29,6 +29,6 @@ export const CalendarContainer = styled.div`
 
 export const LogButton = styled.button`
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
-    margin-top: ${({ theme }) => theme.spaces.m}px;
+    margin-top: ${({ theme }) => theme.spaces.mm}px;
   }
 `;

@@ -33,8 +33,11 @@ export const CityTitle = styled.textarea`
   max-width: ${({ theme }) => theme.spaces.xxl}px;
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
     text-align: center;
-    margin-left: -${({ theme }) => theme.spaces.mm}px;
     max-height: ${({ theme }) => theme.spaces.x}px;
+  }
+  @media (max-width: ${({ theme }) => theme.breakPoints.mobile}px) {
+    max-width: ${({ theme }) => theme.spaces.xx}px;
+    font-size: ${({ theme }) => theme.fonts.x}px;
   }
 `;
 
