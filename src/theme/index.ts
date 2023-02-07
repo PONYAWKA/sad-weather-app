@@ -16,7 +16,10 @@ const spaces = {
   ss: 5,
   s: 10,
   m: 20,
+  ms: 26,
   mm: 40,
+  mmm: 60,
+  mmmm: 80,
   x: 100,
   xm: 160,
   xx: 200,
@@ -26,6 +29,7 @@ const spaces = {
   maxY: 1080,
 };
 const fonts = {
+  s: 16,
   m: 24,
   x: 36,
   xx: 68,

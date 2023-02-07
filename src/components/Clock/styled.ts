@@ -22,4 +22,8 @@ export const Timer = styled.div`
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
     font-size: ${({ theme }) => theme.fonts.xxl}px;
   }
+  @media (max-width: ${({ theme }) => theme.breakPoints.fold}px) {
+    text-align: center;
+    font-size: ${({ theme }) => theme.fonts.x}px;
+  }
 `;

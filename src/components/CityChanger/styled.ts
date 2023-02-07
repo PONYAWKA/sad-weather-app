@@ -39,6 +39,10 @@ export const CityTitle = styled.textarea`
     max-width: ${({ theme }) => theme.spaces.xx}px;
     font-size: ${({ theme }) => theme.fonts.x}px;
   }
+  @media (max-width: ${({ theme }) => theme.breakPoints.fold}px) {
+    max-width: ${({ theme }) => theme.spaces.x}px;
+    font-size: ${({ theme }) => theme.fonts.m}px;
+  }
 `;
 
 export const EditIcon = styled.img`

@@ -5,7 +5,6 @@ export const CalendarBodyContainer = styled.div`
   height: 100%;
   justify-content: space-between;
   flex-direction: row;
-  overflow: hidden;
   @media (max-width: 767px) {
     flex-direction: column-reverse;
     justify-content: start;

@@ -48,9 +48,17 @@ export const WeatherInfoElement = styled.div`
 export const WeatherInfoElementWeekDay = styled.div`
   text-align: center;
 `;
-export const WeatherInfoElementIcon = styled.img``;
+export const WeatherInfoElementIcon = styled.img`
+  @media (max-width: ${({ theme }) => theme.breakPoints.mobile}px) {
+    width: ${({ theme }) => theme.spaces.mmm}px;
+    align-self: center;
+  }
+`;
 export const WeatherInfoElementTemp = styled.p`
   font-size: ${({ theme }) => theme.fonts.x}px;
   text-align: center;
   margin: 0;
+  @media (max-width: ${({ theme }) => theme.breakPoints.mobile}px) {
+    font-size: ${({ theme }) => theme.fonts.m}px;
+  }
 `;

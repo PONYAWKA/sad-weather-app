@@ -4,6 +4,13 @@ export const EventListBody = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: ${({ theme }) => theme.spaces.mmmm}px;
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    margin-bottom: ${({ theme }) => theme.spaces.mmmm}px;
+  }
+  @media (max-width: ${({ theme }) => theme.breakPoints.fold}px) {
+    margin-bottom: ${({ theme }) => theme.spaces.x}px;
+  }
 `;
 export const LoadEventsButton = styled.button`
   margin: ${({ theme }) => theme.spaces.ss}px 0;
@@ -20,11 +27,15 @@ export const EventElementBody = styled.div`
   text-align: center;
   font-size: ${({ theme }) => theme.fonts.m}px;
   padding: ${({ theme }) => theme.spaces.m}px 0;
+  @media (min-height: ${({ theme }) => theme.breakPoints.fold}px) {
+    font-size: ${({ theme }) => theme.fonts.s}px;
+  }
 `;
 export const EventElementText = styled.div`
   text-align: center;
   width: 100%;
   padding: 0 ${({ theme }) => theme.spaces.s}px;
+  word-break: break-all;
 `;
 export const EventListContainer = styled.div`
   display: flex;
@@ -45,9 +56,6 @@ export const EventListContainer = styled.div`
     border-radius: ${({ theme }) => theme.spaces.s}px;
     box-shadow: inset 0 0 ${({ theme }) => theme.spaces.s}px
       ${({ theme }) => theme.colors.white};
-  }
-  @media (min-height: ${({ theme }) => theme.breakPoints.laptopW}px) {
-    max-height: ${({ theme }) => theme.spaces.xxx}px;
   }
 `;
 export const EventElementTime = styled.div`
