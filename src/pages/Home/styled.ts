@@ -14,6 +14,9 @@ export const WeatherBody = styled.div<PropsType>`
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
     background: none;
   }
+  @media (max-height: ${({ theme }) => theme.spaces.l}px) {
+    height: auto;
+  }
 `;
 export const WeatherInfoBody = styled.div<PropsType>`
   display: flex;
@@ -24,7 +27,6 @@ export const WeatherInfoBody = styled.div<PropsType>`
       theme.spaces.ss}px ${({ theme }) => theme.spaces.ss}px ${({ theme }) => theme.colors.grayShadow};
   max-width: ${({ theme }) => theme.spaces.maxX}px;
   max-height: ${({ theme }) => theme.spaces.maxY}px;
-
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
     width: 100%;
     height: 100%;

@@ -25,6 +25,7 @@ const spaces = {
   xx: 200,
   xxx: 300,
   xxl: 400,
+  l: 600,
   maxX: 1920,
   maxY: 1080,
 };
